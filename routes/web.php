@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Juice_Review_Controller;
+use App\Models\Juice_Review;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/',[Juice_Review_Controller::class,'index']);
+Route::get('/new',[Juice_Review_Controller::class,'newcreate']);
+Route::post('/upload',[Juice_Review_Controller::class,'upload']);
