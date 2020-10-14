@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{asset('css\listStyle.css')}}">
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,19 +11,30 @@
 </head>
 
 <body>
+<header>
     <h1>ジュースのレビューサイト</h1>
-    <div>
+</header>
+    <div class="new">
         <form action="/new"  method="GET">
             @csrf
-            <button type="submit">新規作成</button>
+            <button type="submit">投稿</button>
         </form>
     </div>
 
-    @foreach ($juiceList as $image)
-        <div>
-            <img src="{{$image->image}}" alt="img" style="width:250px; height:100px;">
-        </div>
-    @endforeach
+    <div class="juice-list">
+        <ul>
+            @foreach ($juiceList as $image)
+            <li>
+                <figure >
+                    <img src="{{$image->image}}" alt="img">
+                    <figcaption>
+                        <span>{{$image->name}}</span>
+                    </figcaption>
+                </figure>
+            </li>
+            @endforeach
+        </ul>
+    </div>
 
 
 </body>
