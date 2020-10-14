@@ -19,7 +19,7 @@ class Juice_Review_Controller extends Controller
             $file = $request->file('image');
             // 第一引数はディレクトリの指定
             // 第二引数はファイル
-            // 第三引数はpublickを指定することで、URLによるアクセスが可能となる
+            // 第三引数はpublicを指定することで、URLによるアクセスが可能となる
             $path = Storage::disk('s3')->put('/',$file,'public');
             $entry->image = Storage::disk('s3')->url($path);
             $input = $request->only('name', 'star', 'store','area','review');
@@ -35,5 +35,10 @@ class Juice_Review_Controller extends Controller
     
     function newcreate(){
         return view('newJuice');
+    }
+
+    function details($id){
+        $details = Juice_Review::find($id);
+        return view('details', compact('details'));
     }
 }

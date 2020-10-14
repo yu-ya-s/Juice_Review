@@ -20,17 +20,20 @@
             <button type="submit">投稿</button>
         </form>
     </div>
-
+    
     <div class="juice-list">
         <ul>
             @foreach ($juiceList as $image)
             <li>
-                <figure >
-                    <img src="{{$image->image}}" alt="img">
-                    <figcaption>
-                        <span>{{$image->name}}</span>
-                    </figcaption>
-                </figure>
+                <figure>
+                    <form action="/details/{{$image->id}}" method="POST">
+                    @csrf
+                        <input type="image" src="{{$image->image}}" alt="img" class="img">
+                        <figcaption class="name">
+                            <span>{{$image->name}}</span>
+                        </figcaption>
+                    </figure>
+                </form>
             </li>
             @endforeach
         </ul>

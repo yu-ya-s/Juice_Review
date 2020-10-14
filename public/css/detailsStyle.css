@@ -1,0 +1,20 @@
+.back{
+    margin-top: 24px;
+    display: inline-block;
+    max-width: 180px;
+    text-align: left;
+    border: 2px solid #8b8b8b;
+    font-size: 16px;
+    color: #8b8b8b;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: .4s;
+}
+
+.back:hover {
+    background-color: #8b8b8b;
+    border-color: #a0a0a0;
+    color: #FFF;
+}

@@ -8,8 +8,34 @@ header{
     padding-bottom: 32px;
 }
 
+h1{
+    text-align: center;
+    color: rgb(75, 72, 72);
+}
+
+main{
+    display: flex;
+}
+
+.preview{
+    width: 50%;
+}
+
+.preview img{
+    width: 300px;
+    height: 300px;
+    margin-top: 25%;
+    margin-left: 15%;
+    
+}
+
 div{
     margin-top: 24px;
+    
+}
+
+div.newcreate{
+    width: 50%;
 }
 
 h4{
@@ -49,4 +75,34 @@ button:hover {
     background-color: #9ec34b;
     border-color: #cbe585;
     color: #FFF;
+}
+
+.back{
+    margin-top: 24px;
+    display: inline-block;
+    max-width: 180px;
+    text-align: left;
+    border: 2px solid #8b8b8b;
+    font-size: 16px;
+    color: #8b8b8b;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: .4s;
+    margin-left: 30px;
+}
+
+.back:hover {
+    background-color: #8b8b8b;
+    border-color: #a0a0a0;
+    color: #FFF;
+}
+
+ul{
+    padding: 0;
+}
+
+li{
+    display: inline-block;
 }

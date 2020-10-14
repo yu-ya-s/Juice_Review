@@ -22,3 +22,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[Juice_Review_Controller::class,'index']);
 Route::get('/new',[Juice_Review_Controller::class,'newcreate']);
 Route::post('/upload',[Juice_Review_Controller::class,'upload']);
+Route::post('/details/{id}',[Juice_Review_Controller::class,'details']);
