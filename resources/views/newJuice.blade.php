@@ -48,6 +48,14 @@
                 <input id="none" name="area" type="radio" class="radio" value=3>
                 <br>
             </div>
+            <div>
+                <h4>購入した都道府県</h4>
+                <select name="pref">
+                    @foreach($prefs as $key => $name)
+                        <option value="{{ $key }}">{{$name}}</option>
+                    @endforeach
+                </select>
+            </div>
             <div class="review">
                 <h4>飲んだ感想</h4>
                 <textarea name="review" placeholder="感想を入力"></textarea>
@@ -67,9 +75,9 @@
             </ul>
     </div>
     <div class="preview">
-        <div>
-            <img id="preview" title="ここに選択した画像が表示されます。">
-            
-        </div>
+        <img id="preview" title="ここに選択した画像が表示されます。">
     </div>
 </main>
+<footer>
+    <p>©ポートフォリオ</p>
+</footer>

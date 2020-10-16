@@ -47,7 +47,6 @@ h4{
     margin-right: 6px;
     top: 1px;
     position: relative;
-
 }
 
 textarea{
@@ -105,4 +104,11 @@ ul{
 
 li{
     display: inline-block;
+}
+
+footer{
+    background-color: #efefef;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    text-align: center;
 }
