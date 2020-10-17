@@ -8,11 +8,11 @@
         <div>
             <img src="{{ $details->image }}" alt="img" class="img">
         </div>
-        <div class=>
+        <div>
             <p class="starTitle">評価</p>
             <p>{{ $details->star }}</p>
         </div>
-        <div class=>
+        <div>
             <p class="storeTitle">購入場所</p>
             <p>{{ $details->store }}</p>
         </div>
@@ -40,6 +40,12 @@
             <form action="/" method="GET">
                 @csrf
                 <button type="submit" class="back">戻る</button>
+            </form>
+        </div>
+        <div>
+            <form action="/edit/{{ $details->id }}" method="GET">
+                @csrf
+                <input type="submit" value="編集" class="editButton">
             </form>
         </div>
         <div>

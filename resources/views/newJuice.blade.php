@@ -10,17 +10,26 @@
         <form action="/upload" method="post" enctype="multipart/form-data">
         @csrf
             <div class="image">
-                <h4>ジュースの写真を選択してください。</h4>
+                <h4>ジュースの写真を選択</h4>
+                @if ($errors->first('image'))
+                    <p class= "validation">{{$errors->first('image')}}</p>
+                @endif
                 <input type="file" name="image" id="image">
                 <br>
             </div>
             <div class="name">
                 <h4>ジュース名</h4>
+                @if ($errors->first('name'))
+                    <p class= "validation">{{$errors->first('name')}}</p>
+                @endif
                 <input type="text" name="name" placeholder="ジュース名">
                 <br>
             </div>
             <div class="star">
                 <h4>評価</h4>
+                @if ($errors->first('star'))
+                    <p class= "validation">{{$errors->first('star')}}</p>
+                @endif
                 <label for="one"><span class="text">1:</span></label>
                 <input id="one" name="star" type="radio" class="radio" value=1>
                 <label for="one"><span class="text">2:</span></label>
@@ -35,11 +44,17 @@
             </div>
             <div class="store">
                 <h4>購入店</h4>
+                @if ($errors->first('store'))
+                    <p class= "validation">{{$errors->first('store')}}</p>
+                @endif
                 <input type="text" name="store" placeholder="購入店（スーパー、コンビニなど）">
                 <br>
             </div>
             <div class="area">
                 <h4>全国orご当地</h4>
+                @if ($errors->first('area'))
+                    <p class= "validation">{{$errors->first('area')}}</p>
+                @endif
                 <label for="nationwide">全国：</label>
                 <input id="nationwide" name="area" type="radio" class="radio" value=1>
                 <label for="local">ご当地：</label>
@@ -50,6 +65,9 @@
             </div>
             <div>
                 <h4>購入した都道府県</h4>
+                @if ($errors->first('pref'))
+                    <p class= "validation">{{$errors->first('pref')}}</p>
+                 @endif
                 <select name="pref">
                     @foreach($prefs as $key => $name)
                         <option value="{{ $key }}">{{$name}}</option>
@@ -58,6 +76,9 @@
             </div>
             <div class="review">
                 <h4>飲んだ感想</h4>
+                @if ($errors->first('review'))
+                    <p class= "validation">{{$errors->first('review')}}</p>
+                @endif
                 <textarea name="review" placeholder="感想を入力"></textarea>
                 <br>
             </div>

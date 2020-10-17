@@ -36,6 +36,7 @@ div{
 
 div.newcreate{
     width: 50%;
+    margin-left: 4px;
 }
 
 h4{
@@ -111,4 +112,17 @@ footer{
     padding-top: 32px;
     padding-bottom: 32px;
     text-align: center;
+}
+
+ul.error{
+    list-style: none;
+    color: red;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.validation{
+    color: rgb(250, 41, 41);
 }

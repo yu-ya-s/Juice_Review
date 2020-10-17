@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\newJuiceRequest;
+use App\Http\Requests\updateJuiceRequest;
+
 use App\Models\Juice_Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -16,7 +19,7 @@ class Juice_Review_Controller extends Controller
         return view('juiceList',compact('juiceList','prefs','stars','keyword'));
     }
 
-    function upload(Request $request){
+    function upload(newJuiceRequest $request){
         $entry = new Juice_Review();
         $file = $request->file('image');
         // 第一引数はディレクトリの指定
@@ -82,6 +85,36 @@ class Juice_Review_Controller extends Controller
         $disk->delete($image);
         // DBから、受け取ったIDに対応するジュース情報を削除
         Juice_Review::find($request->id)->delete();
+        return redirect('/');
+    }
+
+    function edit($id){
+        $juice = Juice_Review::find($id);
+        $prefs = config('pref');
+        return view('juiceUpdate',compact('juice','prefs'));
+    }
+
+    function update(updateJuiceRequest $request){
+        // バリデーションのルール
+        // $validator = $request->validate([
+        //     'name' => 'required',
+        //     'star' => 'required',
+        //     'store' => 'required',
+        //     'area' => 'required',
+        //     'prefecture' => 'required',
+        //     'review' => 'required',
+        // ]);
+
+        $id = $request->id;
+        $update = [
+            'name' => $request->name,
+            'star' => $request->star,
+            'store' => $request->store,
+            'area' => $request->area,
+            'prefecture' => $request->pref,
+            'review' => $request->review,
+        ];
+        Juice_Review::where('id', $id)->update($update);
         return redirect('/');
     }
 }

@@ -25,3 +25,5 @@ Route::post('/upload',[Juice_Review_Controller::class,'upload']);
 Route::post('/details/{id}',[Juice_Review_Controller::class,'details']);
 Route::get('/search',[Juice_Review_Controller::class,'search']);
 Route::post('/delete/{id}',[Juice_Review_Controller::class,'delete']);
+Route::get('/edit/{id}', [Juice_Review_Controller::class,'edit']);
+Route::post('/update/{id}',[Juice_Review_Controller::class,'update']);
