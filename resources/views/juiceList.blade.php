@@ -11,12 +11,44 @@
 </head>
 
 <body>
-<header>
-    <h1>ジュースのレビューサイト</h1>
-</header>
+    <header>
+        <div class="headmenu">
+            <div class="top">
+                <a href="/">
+                    <p>トップページへ</p>
+                </a>
+            </div>
+            <div class="user">
+                @auth
+                <p>こんにちは！{{Auth::user()->name}}さん！</p>
+                <a href={{ route('logout') }} onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <p>ログアウト</p>
+                </a>
+                <form id='logout-form' action={{ route('logout')}} method="POST" style="display: none;">
+                @csrf
+                </form>
+                @endauth
+                @guest
+                <a href='/login'>
+                    <p>ログインはこちら！</p>
+                </a>
+                <a href='/register'>
+                    <p>ユーザー新規登録はこちら！</p>
+                </a>
+                @endguest
+            </div>
+        </div>
+        <div>
+            {{--  @if (Auth::user()) 
+            <h1>{{Auth::user()->name}}さんの投稿</h1>
+            @else  --}}
+            <h1>ジュースのレビューサイト</h1>
+            {{--  @endif  --}}
+        </div>
+    </header>
     <div class="tool">
         <div class="search">
-            <form action="/search"  method="GET">
+            <form action="/search" method="GET">
                 @csrf
                 <div class="keyword">
                     <input type="text" name="keyword" value="{{$keyword}}" placeholder="ジュースの名前を入力">
@@ -29,7 +61,7 @@
                     <label>購入した都道府県：</label>
                     <select name="pref">
                         @foreach($prefs as $key => $name)
-                            <option value="{{$key}}" >{{$name}}</option>
+                            <option value="{{$key}}">{{$name}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -46,11 +78,25 @@
                 </div>
             </form>
         </div>
-        <div class="new">
-            <form action="/new"  method="GET">
-                @csrf
-                <button type="submit">投稿</button>
-            </form>
+        <div class="button">
+            <table>
+                <tr>
+                    <div class="new">
+                        <form action="/new"  method="GET">
+                            @csrf
+                            <button type="submit">新規投稿</button>
+                        </form>
+                    </div>
+                </tr>
+                <tr>
+                    <div class="myJuice">
+                        <form action="/myjuice" method="GET">
+                            @csrf
+                            <button type="submit">自分の投稿</button>
+                        </form>
+                    </div>
+                </tr>
+            </table>
         </div>
     </div>
     <div class="juice-list">
@@ -72,6 +118,9 @@
         <div class="pagination">
             {{$juiceList->links('vendor.pagination.default')}}
         </div>
+    </div>
+    <div class="none">
+        <p>{{$none}}</p>
     </div>
 </body>
 <footer>

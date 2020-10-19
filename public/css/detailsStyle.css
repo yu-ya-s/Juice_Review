@@ -50,29 +50,6 @@ body{
     background-color: #b8b6b6;
 }
 
-.editButton{
-    display: inline-block;
-    max-width: 180px;
-    text-align: left;
-    border: 2px solid #9ec34b;
-    font-size: 16px;
-    color: #9ec34b;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 4px;
-    transition: .4s;
-    margin-top: 24px;
-    margin-left: 16px;
-    float: left;
-}
-
-.editButton:hover {
-    background-color: #9ec34b;
-    border-color: #cbe585;
-    color: #FFF;
-}
-
 .deleteButton{
     margin-top: 24px;
     display: inline-block;
@@ -95,7 +72,6 @@ body{
     border-color: #ff7d7d;
     color: #FFF;
 }
-
 
 footer{
     margin-top: 10%;

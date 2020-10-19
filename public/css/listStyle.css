@@ -4,13 +4,37 @@ body {
 
 header {
     background-color: #efefef;
-    padding-top: 32px;
-    padding-bottom: 32px;
+    /* padding-top: 32px; */
+    padding-bottom: 30px;
+}
+
+.headmenu{
+    display: flex;
+}
+
+.top{
+    width: 50%;
+    text-align: left;
+    margin: 0;
+}
+
+.user{
+    width: 50%;
+    margin: 0;
+    text-align: right;
+}
+
+header p{
+    margin: 0;
+    padding-top: 8px;
+
 }
 
 h1 {
     text-align: center;
     color: rgb(75, 72, 72);
+    margin-bottom: 45px;
+    margin-top: 0;
 }
 
 .tool {
@@ -59,10 +83,9 @@ div.keyword {
     height: 30px;
 }
 
+
 .new {
-    width: 70px;
     display: 30%;
-    margin: 0 4px 0 auto;
 }
 
 .new button {
@@ -84,6 +107,44 @@ div.keyword {
     background-color: #9ec34b;
     border-color: #cbe585;
     color: #FFF;
+}
+
+.myJuice{
+    display: 30%;
+}
+
+.myJuice button{
+    display: inline-block;
+    max-width: 180px;
+    text-align: left;
+    border: 2px solid #ff7b00;
+    font-size: 16px;
+    color: #ff7b00;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: .4s;
+    margin-top: 4px;
+}
+
+.myJuice button:hover{
+    background-color: #ff7b00;
+    border-color: #ffa24c;
+    color: #FFF;
+}
+
+div .button{
+    text-align: right;
+}
+
+.new tr{
+    margin-left: 4px;
+}
+
+.button{
+    margin-right: 4px;
+    margin-left: auto;
 }
 
 figure {
@@ -134,4 +195,9 @@ footer {
     padding-top: 32px;
     padding-bottom: 32px;
     text-align: center;
+}
+
+.none{
+    text-align: center;
+    margin-bottom: 30px;
 }

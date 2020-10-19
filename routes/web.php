@@ -15,15 +15,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/start', function () {
+    return view('welcome');
+});
 
 Route::get('/',[Juice_Review_Controller::class,'list']);
-Route::get('/new',[Juice_Review_Controller::class,'newcreate']);
 Route::post('/upload',[Juice_Review_Controller::class,'upload']);
 Route::post('/details/{id}',[Juice_Review_Controller::class,'details']);
 Route::get('/search',[Juice_Review_Controller::class,'search']);
 Route::post('/delete/{id}',[Juice_Review_Controller::class,'delete']);
 Route::get('/edit/{id}', [Juice_Review_Controller::class,'edit']);
 Route::post('/update/{id}',[Juice_Review_Controller::class,'update']);
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/new',[Juice_Review_Controller::class,'newcreate']);
+    Route::get('/myjuice',[Juice_Review_Controller::class,'myjuice']);
+});
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
