@@ -11,7 +11,7 @@
 <body>
     <div class="details">
         <div>
-            <img src="{{ $details->image }}" alt="img" class="img">
+            <img src="{{ $details->image }}" alt="img">
         </div>
         <div>
             <p class="starTitle">評価</p>

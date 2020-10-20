@@ -14,7 +14,7 @@
             @csrf
             <div class="juice">
                 <div>
-                    <img src="{{ $juice->image }}" alt="img" class="img">
+                    <img src="{{ $juice->image }}" alt="img">
                 </div>
                 <div>
                     <p class="nameTitle">名前の変更</p>

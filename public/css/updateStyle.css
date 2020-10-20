@@ -111,3 +111,10 @@ textarea{
 .validation{
     color: rgb(250, 41, 41);
 }
+
+img{
+    width: 560px;
+    height: 560px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
