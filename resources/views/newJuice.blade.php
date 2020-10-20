@@ -3,6 +3,11 @@
 <script type="text/javascript" src="{{asset('js\preview.js')}}"></script>
 
 <header>
+    <div class="top">
+        <a href="/">
+            <p>トップページへ</p>
+        </a>
+    </div>
     <h1>新しいレビューの作成</h1>
 </header>
 <main>

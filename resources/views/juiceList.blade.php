@@ -10,42 +10,43 @@
     <title>ジュースのレビューサイト</title>
 </head>
 
-<body>
-    <header>
-        <div class="headmenu">
-            <div class="top">
-                <a href="/">
-                    <p>トップページへ</p>
-                </a>
-            </div>
-            <div class="user">
-                @auth
-                <p>こんにちは！{{Auth::user()->name}}さん！</p>
-                <a href={{ route('logout') }} onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <p>ログアウト</p>
-                </a>
-                <form id='logout-form' action={{ route('logout')}} method="POST" style="display: none;">
-                @csrf
-                </form>
-                @endauth
-                @guest
-                <a href='/login'>
-                    <p>ログインはこちら！</p>
-                </a>
-                <a href='/register'>
-                    <p>ユーザー新規登録はこちら！</p>
-                </a>
-                @endguest
-            </div>
+
+<header>
+    <div class="headmenu">
+        <div class="top">
+            <a href="/">
+                <p>トップページへ</p>
+            </a>
         </div>
-        <div>
-            {{--  @if (Auth::user()) 
-            <h1>{{Auth::user()->name}}さんの投稿</h1>
-            @else  --}}
+        <div class="user">
+            @auth
+            <p>こんにちは！{{Auth::user()->name}}さん！</p>
+            <a href={{ route('logout') }} onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <p>ログアウト</p>
+            </a>
+            <form id='logout-form' action={{ route('logout')}} method="POST" style="display: none;">
+            @csrf
+            </form>
+            @endauth
+            @guest
+            <a href='/login'>
+                <p>ログインはこちら！</p>
+            </a>
+            <a href='/register'>
+                <p>ユーザー新規登録はこちら！</p>
+            </a>
+            @endguest
+        </div>
+    </div>
+    <div>
+        @if (!empty($userName))
+            <h1>{{$userName}}さんの投稿</h1>
+        @else    
             <h1>ジュースのレビューサイト</h1>
-            {{--  @endif  --}}
-        </div>
-    </header>
+        @endif
+    </div>
+</header>
+<body>    
     <div class="tool">
         <div class="search">
             <form action="/search" method="GET">

@@ -1,5 +1,10 @@
 <link rel="stylesheet" href="{{ asset('css\detailsStyle.css') }}">
 <header>
+    <div class="top">
+        <a href="/">
+            <p>トップページへ</p>
+        </a>
+    </div>
     <h1>{{ $details->name }}</h1>
 </header>
 
@@ -43,16 +48,20 @@
             </form>
         </div>
         <div>
+            @if ((Auth::id())==$details->user_id)
             <form action="/edit/{{ $details->id }}" method="GET">
                 @csrf
                 <input type="submit" value="編集" class="editButton">
             </form>
+            @endif
         </div>
         <div>
+            @if ((Auth::id())==$details->user_id)
             <form action="/delete/{{ $details->id }}" method="POST">
                 @csrf
                 <input type="submit" value="削除" class="deleteButton">
             </form>
+            @endif
         </div>
     </div>
 </body>

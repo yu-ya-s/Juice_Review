@@ -153,6 +153,7 @@ class Juice_Review_Controller extends Controller
 
     function myjuice(){
         $userId = Auth::id();
+        $userName = Auth::user()->name;
         $prefs = config('pref');
         $stars = config('star');
         $keyword = '';
@@ -164,6 +165,6 @@ class Juice_Review_Controller extends Controller
         if($id == 0){
             $none = '投稿がありません。';
         }
-        return view('juiceList',compact('juiceList','prefs','stars','keyword','userId','none'));
+        return view('juiceList',compact('juiceList','prefs','stars','keyword','userId','userName','none'));
     }
 }

@@ -1,6 +1,11 @@
 <link rel="stylesheet" href="{{ asset('css\updateStyle.css') }}">
 
 <header>
+    <div class="top">
+        <a href="/">
+            <p>トップページへ</p>
+        </a>
+    </div>
     <h1>{{$juice->name}}の編集</h1>
 </header>
 
