@@ -4,7 +4,6 @@ body{
 
 header{
     background-color: #efefef;
-    /* padding-top: 32px; */
     padding-bottom: 32px;
 }
 
@@ -21,10 +20,6 @@ header{
 h1{
     text-align: center;
     color: rgb(75, 72, 72);
-}
-
-main{
-    display: flex;
 }
 
 .preview{

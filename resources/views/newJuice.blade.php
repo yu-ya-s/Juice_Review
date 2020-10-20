@@ -10,7 +10,7 @@
     </div>
     <h1>新しいレビューの作成</h1>
 </header>
-<main>
+<body>
     <div class="newCreate">
         <form action="/upload" method="post" enctype="multipart/form-data">
         @csrf
@@ -103,7 +103,7 @@
     <div class="preview">
         <img id="preview" title="ここに選択した画像が表示されます。">
     </div>
-</main>
+</body>
 <footer>
     <p>©ポートフォリオ</p>
 </footer>
