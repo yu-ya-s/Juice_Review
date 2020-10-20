@@ -11,6 +11,14 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
+                        <div class="message" style = "text-align :center">
+                            <p>テストユーザーとして、<br>
+                                メールアドレス：test@example.com <br>
+                                パスワード：password <br>
+                                をお使いください。
+                            </p>
+                        </div>
+
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
