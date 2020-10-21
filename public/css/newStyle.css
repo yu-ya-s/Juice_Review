@@ -137,3 +137,7 @@ ul.error{
 .validation{
     color: rgb(250, 41, 41);
 }
+
+.store input{
+    width: 220px;
+}
