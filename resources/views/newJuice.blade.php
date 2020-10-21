@@ -38,7 +38,7 @@
                     @if ($errors->first('name'))
                         <p class= "validation">{{$errors->first('name')}}</p>
                     @endif
-                    <input type="text" name="name" placeholder="ジュース名">
+                    <input type="text" name="name" maxlength="30" placeholder="ジュース名">
                     <br>
                 </div>
                 <div class="star">
@@ -63,7 +63,7 @@
                     @if ($errors->first('store'))
                         <p class= "validation">{{$errors->first('store')}}</p>
                     @endif
-                    <input type="text" name="store" placeholder="購入店（スーパー、コンビニなど）">
+                    <input type="text" name="store" maxlength="30" placeholder="購入店（スーパー、コンビニなど）">
                     <br>
                 </div>
                 <div class="area">
@@ -91,11 +91,11 @@
                     </select>
                 </div>
                 <div class="review">
-                    <h4>飲んだ感想</h4>
+                    <h4>飲んだ感想（180文字以内）</h4>
                     @if ($errors->first('review'))
                         <p class= "validation">{{$errors->first('review')}}</p>
                     @endif
-                    <textarea name="review" placeholder="感想を入力"></textarea>
+                    <textarea name="review" maxlength="180" placeholder="感想を入力"></textarea>
                     <br>
                 </div>
                 <ul>
