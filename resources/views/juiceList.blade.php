@@ -57,7 +57,7 @@
                     </div>
                     <div class="local">
                         <label for="local">ローカル：</label>
-                        <input type="checkbox" name="local" id="local" class="checkbox" value=2>
+                        <input type="checkbox" name="local" id="local" class="checkbox">
                     </div>
                     <div class="pref">
                         <label>購入した都道府県：</label>
